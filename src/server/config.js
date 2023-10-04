@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { routerKittens } from '../routes/kittens.route.js';
+import "dotenv/config.js"
 
 export default class Server{
 
@@ -20,7 +21,7 @@ export default class Server{
     }
 
     listen(){
-        this.app.listen(3000, () => {
+        this.app.listen(process.env.PORT, () => {
             console.log('Server started on port 4000');
         });
     }
